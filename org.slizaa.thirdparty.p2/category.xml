@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.slizaa.thirdparty.feature_0.0.0.jar" id="org.slizaa.thirdparty.feature" version="0.0.0">
-      <category name="org.slizaa.thirdparty"/>
+   <feature id="org.slizaa.thirdparty.feature" version="0.0.0">
+      <category name="org.slizaa.thirdparty.category"/>
    </feature>
-   <feature url="features/org.slizaa.thirdparty.test.feature_0.0.0.jar" id="org.slizaa.thirdparty.test.feature" version="0.0.0">
-      <category name="org.slizaa.thirdparty.test"/>
+   <feature id="org.slizaa.thirdparty.test.feature" version="0.0.0">
+      <category name="org.slizaa.thirdparty.test.category"/>
    </feature>
-   <category-def name="org.slizaa.thirdparty.feature" label="Slizaa dependencies"/>
-   <category-def name="org.slizaa.thirdparty.test.feature" label="Slizaa test dependencies"/>
+   <category-def name="org.slizaa.thirdparty.category" label="Slizaa dependencies"/>
+   <category-def name="org.slizaa.thirdparty.test.category" label="Slizaa test dependencies"/>
 </site>
