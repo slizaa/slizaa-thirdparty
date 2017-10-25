@@ -14,7 +14,7 @@
 	</prerequisites>
 
 	<properties>
-		<tycho-version>0.24.0</tycho-version>
+		<tycho-version>1.0.0</tycho-version>
 	</properties>
 
 	<build>
@@ -45,36 +45,26 @@
 	</build>
 
 	<dependencies>
+
+		<!-- prod -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- test -->
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
 			<version>3.3.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.5</version>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
 		</dependency>
-		<dependency>
-			<groupId>net.javacrumbs.json-unit</groupId>
-			<artifactId>json-unit</artifactId>
-			<version>1.15.0</version>
-		</dependency>
-		<dependency>
-			<groupId>net.javacrumbs.json-unit</groupId>
-			<artifactId>json-unit-core</artifactId>
-			<version>1.15.0</version>
-		</dependency>
-		<dependency>
-			<groupId>net.javacrumbs.json-unit</groupId>
-			<artifactId>json-unit-fluent</artifactId>
-			<version>1.15.0</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.freemarker</groupId>
-		    <artifactId>freemarker</artifactId>
-		    <version>2.3.23</version>
-		</dependency>		
+
 	</dependencies>
 
 	<modules>

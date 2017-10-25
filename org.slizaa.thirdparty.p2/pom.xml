@@ -8,7 +8,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.slizaa.neo4j.opencypher.p2</artifactId>
+	<artifactId>org.slizaa.thirdparty.p2</artifactId>
 	<packaging>eclipse-repository</packaging>
 
 </project>

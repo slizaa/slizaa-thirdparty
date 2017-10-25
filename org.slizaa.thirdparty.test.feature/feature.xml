@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.slizaa.thirdparty.feature"
-      label="org.slizaa.thirdparty.feature"
+      id="org.slizaa.thirdparty.test.feature"
+      label="org.slizaa.thirdparty.test.feature"
       version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -17,17 +17,17 @@
    </license>
 
    <plugin
-         id="com.google.gson"
+         id="org.mockito.mockito-all"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
-         id="org.freemarker.freemarker"
+         id="org.assertj.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>         
+         unpack="false"/>
 
 </feature>
