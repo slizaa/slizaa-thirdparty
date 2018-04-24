@@ -3,75 +3,117 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.slizaa.thirdparty</groupId>
-	<artifactId>org.slizaa.thirdparty.parent</artifactId>
+	<artifactId>org.slizaa.thirdparty</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-
-	<packaging>pom</packaging>
-
-	<!-- tycho requires maven >= 3.0 -->
-	<prerequisites>
-		<maven>3.0</maven>
-	</prerequisites>
-
-	<properties>
-		<tycho-version>1.0.0</tycho-version>
-	</properties>
 
 	<build>
 		<plugins>
 			<plugin>
-				<!-- enable tycho build extension -->
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<extensions>true</extensions>
+				<groupId>org.reficio</groupId>
+				<artifactId>p2-maven-plugin</artifactId>
+				<version>1.3.0</version>
+				<executions>
+					<execution>
+						<id>generate-p2-site</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<configuration>
+							<featureDefinitions>
+								<feature>
+									<id>${project.artifactId}.feature</id>
+									<version>${project.version}</version>
+									<label>Slizaa Third Party</label>
+									<providerName>${project.groupId}</providerName>
+									<description>${project.description}</description>
+									<generateSourceFeature>true</generateSourceFeature>
+									<artifacts>
+										<artifact>
+											<id>com.google.code.gson:gson:2.5</id>
+											<transitive>false</transitive>
+											<source>true</source>
+										</artifact>
+										<artifact>
+											<id>javax.ws.rs:javax.ws.rs-api:2.1</id>
+											<transitive>false</transitive>
+											<source>true</source>
+										</artifact>
+									</artifacts>
+								</feature>
+								<feature>
+									<id>${project.artifactId}.test.feature</id>
+									<version>${project.version}</version>
+									<label>Slizaa Test Third Party</label>
+									<providerName>${project.groupId}</providerName>
+									<description>${project.description}</description>
+									<generateSourceFeature>true</generateSourceFeature>
+									<artifacts>
+										<artifact>
+											<id>org.assertj:assertj-core:3.8.0</id>
+											<transitive>false</transitive>
+											<source>true</source>
+										</artifact>
+										<artifact>
+											<id>org.mockito:mockito-all:1.10.18</id>
+											<transitive>false</transitive>
+											<source>true</source>
+										</artifact>
+									</artifacts>
+								</feature>
+							</featureDefinitions>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
+
 			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.5.v20120716</version>
 				<configuration>
-					<target>
-						<artifact>
-							<groupId>org.slizaa.thirdparty</groupId>
-							<artifactId>org.slizaa.thirdparty.target</artifactId>
-							<version>${project.version}</version>
-						</artifact>
-					</target>
-					<pomDependencies>consider</pomDependencies>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
+					<webApp>
+						<contextPath>/site</contextPath>
+					</webApp>
 				</configuration>
 			</plugin>
+
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.reficio</groupId>
+										<artifactId>
+											p2-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.3.0,)
+										</versionRange>
+										<goals>
+											<goal>site</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
-
-	<dependencies>
-
-		<!-- prod -->
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.5</version>
-		</dependency>
-
-		<!-- test -->
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.10.19</version>
-		</dependency>
-
-	</dependencies>
-
-	<modules>
-		<module>org.slizaa.thirdparty.target</module>
-		<module>org.slizaa.thirdparty.feature</module>
-		<module>org.slizaa.thirdparty.test.feature</module>
-		<module>org.slizaa.thirdparty.p2</module>
-	</modules>
 
 </project>
