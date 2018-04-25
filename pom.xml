@@ -55,7 +55,7 @@
 											<source>true</source>
 										</artifact>
 										<artifact>
-											<id>org.mockito:mockito-all:1.10.18</id>
+											<id>org.mockito:mockito-all:1.10.19</id>
 											<transitive>false</transitive>
 											<source>true</source>
 										</artifact>
