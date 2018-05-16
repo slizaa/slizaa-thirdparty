@@ -39,6 +39,11 @@
 											<transitive>false</transitive>
 											<source>true</source>
 										</artifact>
+										<artifact>
+											<id>com.fasterxml.jackson.core:jackson-annotations:2.8.11</id>
+											<transitive>true</transitive>
+											<source>true</source>
+										</artifact>
 									</artifacts>
 								</feature>
 								<feature>
