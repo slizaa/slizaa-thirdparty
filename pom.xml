@@ -51,7 +51,7 @@
 											<source>true</source>
 											<override>true</override>
 											<instructions>
-												<Import-Package>!io.netty.*,!org.HdrHistogram.*,javax.net.ssl,org.neo4j.driver.v1*</Import-Package>
+												<Import-Package>!io.netty.*,!org.HdrHistogram.*,javax.net.ssl,org.neo4j.driver.v1*;version="[1.6,2)"</Import-Package>
 												<Export-Package>org.neo4j.driver.v1*</Export-Package>
 											</instructions>
 										</artifact>
