@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -43,6 +44,16 @@
 											<id>com.fasterxml.jackson.core:jackson-annotations:2.8.11</id>
 											<transitive>false</transitive>
 											<source>true</source>
+										</artifact>
+										<artifact>
+											<id>org.neo4j.driver:neo4j-java-driver:1.6.1</id>
+											<transitive>false</transitive>
+											<source>true</source>
+											<override>true</override>
+											<instructions>
+												<Import-Package>!io.netty.*,!org.HdrHistogram.*,javax.net.ssl,org.neo4j.driver.v1*</Import-Package>
+												<Export-Package>org.neo4j.driver.v1*</Export-Package>
+											</instructions>
 										</artifact>
 									</artifacts>
 								</feature>
